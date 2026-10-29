@@ -1,10 +1,10 @@
 // server.js
 const { WebSocketServer } = require('ws');
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 const wss = new WebSocketServer({ port: PORT });
 
-console.log(`[SERVER] Stairway Crash backend running on ws://localhost:${PORT}`);
+console.log(`[SERVER] running on port ${PORT}`);
 
 let gameState = 'IDLE'; // IDLE, STARTING, RUNNING, CRASHED
 let currentMultiplier = 1.00;
